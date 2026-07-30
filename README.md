@@ -1,49 +1,81 @@
-# FacilitaSaude-Platform
+# FacilitaSaude Platform
 
-Plataforma inteligente de saúde desenvolvida com Django, Inteligência Artificial e Engenharia de Software.
+Plataforma digital de saúde em desenvolvimento, com foco em organização da informação, acessibilidade e experiência inteligente para usuários e profissionais.
 
-## Visão geral
+## Status atual do projeto
 
-O FacilitaSaude-Platform é um projeto voltado à criação de uma solução digital para saúde, com foco em organização, informação confiável e experiências mais inteligentes para usuários e profissionais.
+O projeto encontra-se em fase inicial, com a base do backend estruturada e a primeira versão da interface inicial da aplicação em construção na branch frontend.
 
 ## O que já foi feito até o momento
 
-- Inicialização do projeto backend com Django.
-- Criação da estrutura base do repositório, incluindo pastas para backend e documentação.
-- Configuração inicial do projeto em backend/config, com settings e URLs básicos.
-- Criação do app accounts como ponto inicial da arquitetura modular.
-- Estruturação de arquivos principais do app, como models, views, admin, tests e migrations.
-- Organização da documentação do projeto em docs, incluindo:
-  - visão do projeto
-  - plano mestre
-  - roadmap
-  - arquitetura
-  - modelo de banco de dados
-  - sprints
-- Definição inicial da visão, missão e valores do projeto.
+### 1. Estrutura inicial do repositório
+- Criação da estrutura base do projeto com pastas para backend, frontend e documentação.
+- Organização do repositório para evolução modular.
 
-## Tecnologias utilizadas
+### 2. Backend em Django
+- Inicialização do projeto Django na pasta backend.
+- Criação da configuração básica do projeto em backend/config.
+- Definição de arquivos principais de configuração, rotas e settings.
+- Criação do app accounts como ponto inicial da arquitetura.
+- Estruturação dos arquivos principais do app: models, views, admin, tests e migrations.
+
+### 3. Documentação do projeto
+- Criação de documentos de visão, plano, roadmap, arquitetura, modelo de banco de dados e sprints.
+- Definição inicial da proposta, missão, visão e valores do projeto.
+
+### 4. Frontend inicial
+- Criação do esqueleto da landing page em home.html.
+- Desenvolvimento inicial do estilo visual em home.css.
+- Definição de seções como cabeçalho, capa, benefícios, categorias e rodapé.
+
+## O que falta fazer, passo a passo
+
+### Etapa 1 — Finalizar a interface inicial
+- Ajustar o layout da home page.
+- Corrigir detalhes de HTML/CSS e estrutura visual.
+- Adicionar imagens e elementos finais de navegação.
+
+### Etapa 2 — Criar as páginas principais
+- Desenvolver as páginas de suporte, equipe, login e cadastro.
+- Garantir a navegação entre as telas.
+
+### Etapa 3 — Definir o modelo de dados
+- Criar os modelos principais da plataforma.
+- Estruturar as entidades relacionadas a usuários, perfis e conteúdos de saúde.
+
+### Etapa 4 — Implementar autenticação e cadastro
+- Criar fluxo de cadastro de usuários.
+- Implementar login, logout e recuperação de acesso.
+
+### Etapa 5 — Conectar frontend e backend
+- Integrar as páginas desenvolvidas com as views e rotas do Django.
+- Garantir comunicação correta entre interface e servidor.
+
+### Etapa 6 — Implementar funcionalidades principais
+- Criar recursos centrais da plataforma.
+- Expandir a experiência para usuários e profissionais da área da saúde.
+
+### Etapa 7 — Testes e preparação para publicação
+- Adicionar testes automatizados.
+- Validar fluxo completo da aplicação.
+- Preparar o projeto para deploy e uso real.
+
+## Tecnologias atuais
 
 - Python
 - Django
-- SQLite (configuração inicial)
-- Git/GitHub para versionamento
+- HTML
+- CSS
+- Git/GitHub
 
-## Estrutura do repositório
+## Estrutura principal do repositório
 
-- backend/: estrutura principal da aplicação Django
-- backend/apps/: aplicações modulares do projeto
-- backend/config/: configurações e rotas principais do projeto
+- backend/: aplicação Django principal
+- backend/apps/: módulos da aplicação
+- backend/config/: configuração do projeto
 - docs/: documentação técnica e de planejamento
+- home.html e home.css: base inicial do frontend
 
-## Status atual
+## Resumo
 
-O projeto encontra-se em fase inicial de estruturação, com a base do backend e a documentação do produto já organizadas. As próximas etapas incluem a definição dos modelos de domínio, implementação das funcionalidades principais e evolução da arquitetura.
-
-## Próximos passos
-
-- Definir os modelos de negócio da plataforma
-- Implementar autenticação e cadastro de usuários
-- Criar funcionalidades centrais para a experiência do usuário
-- Integrar inteligência artificial e recursos inteligentes
-- Expandir a cobertura de testes e preparação para deploy
+A branch frontend está no início da construção da interface do projeto. O próximo foco é transformar o esqueleto atual em uma experiência mais completa, conectada ao backend e alinhada com as metas da plataforma.

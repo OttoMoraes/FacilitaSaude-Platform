@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    background-color: rgb(224, 224, 224);
+    background-color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 header{
@@ -48,7 +48,7 @@ header button a{
     font-weight: 600;
 }
 .capa{
-    background-image: url(médico.jpg);
+    background-image: url(robo.jpg);
     width: auto;
     height: auto;
     min-height: 725px;
@@ -59,7 +59,7 @@ header button a{
     align-items: center;
 }
 .capa-texto{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #000000e6;
     padding: 2rem;
     margin-left: 5rem;
     border-radius: 25px;
@@ -81,11 +81,11 @@ header button a{
 .capa-texto p{
     font-size: 20px;
     margin-top: 0.5rem;
-    color: black;
+    color: #C0C0C0;
     font-weight: 600;
 }
 .capa-texto button{
-    background-color: #30bf30;
+    background-color: blue;
     appearance: inherit;
     padding: 0.75rem;
     border-radius: 17px;
@@ -132,12 +132,19 @@ header button a{
     align-items: center;
     width: 100%;
 }
+.beneficios img{
+    width: auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 100px;
+}
 .ia{
     background-color: white;
     width: auto;
     min-width: 240px;
     height: auto;
     min-height: 200px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,4 +152,49 @@ header button a{
     border-radius: 35px;
     border-color: red;
     border: 10px;
+}
+.ia p{
+    font-size: large;
+    font-weight: 600;
+
+}
+.glossario{
+    background-color: white;
+    width: auto;
+    min-width: 240px;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border-color: red;
+    border: 10px;
+}
+.glossario p{
+    font-size: large;
+    font-weight: 600;
+    
+}
+.digital{
+    background-color: white;
+    width: auto;
+    min-width: 240px;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border-color: red;
+    border: 10px;
+}
+.digital p{
+    font-size: large;
+    font-weight: 600;
+    
 }
