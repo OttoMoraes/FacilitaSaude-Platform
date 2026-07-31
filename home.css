@@ -3,6 +3,7 @@ body{
     padding:0;
     background-color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 header{
     padding: 1rem;
@@ -13,8 +14,17 @@ header{
     max-height: 50px;
 }
 header h1{
-    color: #30bf30;
-    font-weight: 600;
+    display: inline-block;
+    color: #f5f5f5;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.7rem 1.3rem;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #1e5eff 0%, #2563eb 45%, #c0c0c0 100%);
+    border: 2px solid #4166b5;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: skewX(-6deg);
 }
 header ul{
     display:flex;
@@ -29,7 +39,7 @@ header li{
 }
 header a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 header button{
     background-color: blue;
@@ -43,15 +53,15 @@ header button{
     border-style: none;
 }
 header button a{
-    color: white;
+    color: black;
     font-size: large;
     font-weight: 600;
 }
 .capa{
-    background-image: url(robo.jpg);
+    background-image: url(images/robo.png);
     width: auto;
     height: auto;
-    min-height: 725px;
+    min-height: 820px;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -71,6 +81,7 @@ header button a{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
 }
 .capa-texto h3{
     font-size:45px;
@@ -96,7 +107,7 @@ header button a{
     border-style: none;
 }
 .capa-texto a{
-    color: white;
+    color: black;
     font-size: large;
     font-weight: 600;
     text-decoration: none;
@@ -108,15 +119,17 @@ header button a{
     align-items: center;
     width: 100%;
     height: auto;
-    max-height: 500px;
     padding: 1rem;
+    background: linear-gradient(160deg,#030712,#111827,#0f172a);
+    min-height: 100vh;
 }
 .info h4{
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 600;
-    color: #30bf30;
-    background-color: white;
+    color: black;
+    background-color: blue;
     width: auto;
+    letter-spacing: 5px;
     min-width: 700px;
     height: auto;
     min-height: 115px;
@@ -124,6 +137,7 @@ header button a{
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
 }
 .beneficios{
     display: flex;
@@ -152,11 +166,12 @@ header button a{
     border-radius: 35px;
     border-color: red;
     border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
 }
 .ia p{
     font-size: large;
     font-weight: 600;
-
+        
 }
 .glossario{
     background-color: white;
@@ -172,11 +187,12 @@ header button a{
     border-radius: 35px;
     border-color: red;
     border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
 }
 .glossario p{
     font-size: large;
     font-weight: 600;
-    
+    color: black;   
 }
 .digital{
     background-color: white;
@@ -192,9 +208,158 @@ header button a{
     border-radius: 35px;
     border-color: red;
     border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
 }
 .digital p{
     font-size: large;
     font-weight: 600;
-    
+    color: black;   
+}
+.categoria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    padding: 1rem;
+     background:
+        radial-gradient(circle at 20% 20%, rgba(59,130,246,.15), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(16,185,129,.15), transparent 30%),
+        #030712;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+        radial-gradient(circle,#3b82f6 1px,transparent 1px),
+
+        radial-gradient(circle,#10b981 1px,transparent 1px),
+
+        radial-gradient(circle,#ffffff55 .8px,transparent .8px);
+
+    background-size:
+
+        200px 200px,
+
+        260px 260px,
+
+        140px 140px;
+
+    animation:floatParticles 20s linear infinite;
+
+    opacity:.7;
+
+}
+
+@keyframes floatParticles{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-200px);
+    }
+}
+.categoria h4{
+    font-size: 70px;
+    font-weight: 600;
+    color: black;
+    background-color: blue;
+    width: auto;
+    letter-spacing: 5px;
+    min-width: 700px;
+    height: auto;
+    min-height: 115px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+.dados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.dados img{
+    width: auto;
+    height: auto;
+    max-height: 100px;
+    max-width: 100px;
+}
+.cardiologia{
+    background-color: white;
+    width: auto;
+    min-width: 240px;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border-color: red;
+    border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+.cardiologia p{
+    font-size: large;
+    font-weight: 600;
+    color: black;
+}
+.neurologia{
+    background-color: white;
+    width: auto;
+    min-width: 240px;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border-color: red;
+    border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+.neurologia p{
+    font-size: large;
+    font-weight: 600;
+    color: black;
+}
+.ortopedia{
+    background-color: white;
+    width: auto;
+    min-width: 240px;
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border-color: red;
+    border: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+.ortopedia p{
+    font-size: large;
+    font-weight: 600;
+    color: black;
 }
