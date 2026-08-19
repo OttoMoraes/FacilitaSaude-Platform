@@ -127,6 +127,7 @@ header button a{
     font-size: 70px;
     font-weight: 600;
     color: black;
+    margin-top: 0;
     background-color: blue;
     width: auto;
     letter-spacing: 5px;
@@ -222,7 +223,7 @@ header button a{
     align-items: center;
     width: 100%;
     height: auto;
-    max-height: 500px;
+    min-height: 740px;
     padding: 1rem;
      background:
         radial-gradient(circle at 20% 20%, rgba(59,130,246,.15), transparent 30%),
@@ -230,7 +231,85 @@ header button a{
         #030712;
 
 }
+.enciclopedia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: linear-gradient(160deg, #030712, #111827, #0f172a);
+    min-height: 100vh;
+}
+.enciclopedia h4{
+    font-size: 70px;
+    font-weight: 600;
+    color: black;
+    margin-top: 0;
+    background-color: blue;
+    width: auto;
+    letter-spacing: 5px;
+    min-width: 935px;
+    height: auto;
+    min-height: 115px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+.enciclopedia-content{
+    background-color: #000000e6;
+    padding: 2rem;
+    border-radius: 25px;
+    width: auto;
+    max-width: 640px;
+    height: auto;
+    min-height: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.08);
+    flex-wrap: wrap;
+    text-align: center;
+}
+.enciclopedia-content p{
+    font-size: 20px;
+    margin-top: 0.5rem;
+    color: #C0C0C0;
+    font-weight: 600;
+}
+.enciclopedia-content button{
+    background-color: blue;
+    appearance: inherit;
+    padding: 0.75rem;
+    border-radius: 17px;
+    min-width: 100px;
+    min-height: 56px;
+    width: 100%;
+    height: auto;
+    border-style: none;
+}
+.enciclopedia button a{
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    text-decoration: none;
+}
+.perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 740px;
+    padding: 1rem;
+    background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, .15), transparent 30%), radial-gradient(circle at 80% 80%, rgba(16, 185, 129, .15), transparent 30%), #030712;
 
+}
 body::before{
 
     content:"";
@@ -275,6 +354,7 @@ body::before{
     font-size: 70px;
     font-weight: 600;
     color: black;
+    margin-top: 0;
     background-color: blue;
     width: auto;
     letter-spacing: 5px;
