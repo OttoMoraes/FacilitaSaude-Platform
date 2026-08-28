@@ -18,6 +18,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from apps.accounts.views import encyclopedia_chat
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/chat/", encyclopedia_chat, name="encyclopedia-chat"),
 ]

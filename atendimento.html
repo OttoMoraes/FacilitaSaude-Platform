@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento | FacilitaSaúde</title>
+    <link rel="stylesheet" href="inner.css">
+    <link rel="stylesheet" href="atendimento.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand" href="home.html"><span>Facilita</span>Saúde</a>
+    <nav aria-label="Navegação principal">
+        <ul class="site-nav">
+            <li><a href="enciclopedia.html">Enciclopédia</a></li>
+            <li><a href="login.html">Entrar</a></li>
+            <li><a class="button" href="cadastro.html">Cadastre-se</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="page-main atendimento-main">
+    <section class="page-heading atendimento-heading">
+        <div class="eyebrow">Autoatendimento guiado</div>
+        <h1>Converse sobre saúde com clareza.</h1>
+        <p>Explore respostas educativas da Enciclopédia Médica por uma conversa simples e acolhedora.</p>
+    </section>
+
+    <section class="chat-layout" aria-label="Chat da Enciclopédia Médica">
+        <aside class="category-panel panel">
+            <p class="panel-kicker">Explore por área</p>
+            <h2>Escolha um tema</h2>
+            <p>Comece por uma categoria ou escreva sua própria pergunta.</p>
+            <div class="category-list">
+                <button class="category-chip" type="button" data-question="Quero saber mais sobre Cardiologia">
+                    <span class="category-icon">01</span> Cardiologia
+                </button>
+                <button class="category-chip" type="button" data-question="Quero saber mais sobre Neurologia">
+                    <span class="category-icon">02</span> Neurologia
+                </button>
+                <button class="category-chip" type="button" data-question="Quero saber mais sobre Ortopedia">
+                    <span class="category-icon">03</span> Ortopedia
+                </button>
+            </div>
+            <div class="safety-note">
+                <strong>Informação, não diagnóstico</strong>
+                <span>O autoatendimento não substitui instruções médicas, consulta ou avaliação profissional.</span>
+            </div>
+        </aside>
+
+        <section class="chat-panel panel">
+            <div class="chat-header">
+                <div>
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <strong>Assistente da Enciclopédia</strong>
+                </div>
+                <span class="chat-status">Online</span>
+            </div>
+            <div class="messages" id="messages" aria-live="polite">
+                <div class="message message-assistant">
+                    <span class="message-label">Assistente</span>
+                    <p>Olá! Posso ajudar a encontrar informações gerais sobre Cardiologia, Neurologia e Ortopedia. Qual é a sua dúvida?</p>
+                </div>
+            </div>
+            <form class="chat-form" id="chat-form">
+                <label class="sr-only" for="message-input">Digite sua dúvida</label>
+                <input id="message-input" name="message" maxlength="500" autocomplete="off" placeholder="Ex.: o que é pressão alta?" required>
+                <button type="submit" aria-label="Enviar pergunta">Enviar <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="form-note">Não compartilhe nome, documentos ou outros dados pessoais.</p>
+        </section>
+    </section>
+</main>
+<footer class="site-footer">
+    <p>&copy; 2026 FacilitaSaúde. Todos os direitos reservados.</p>
+    <ul>
+        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="privacidade.html">Privacidade</a></li>
+    </ul>
+</footer>
+<script>
+    const form = document.querySelector('#chat-form');
+    const input = document.querySelector('#message-input');
+    const messages = document.querySelector('#messages');
+    const fallback = 'Posso explicar temas de Cardiologia, Neurologia e Ortopedia. Conte sua dúvida de forma geral ou escolha uma categoria.';
+
+    function addMessage(text, type, category) {
+        const message = document.createElement('div');
+        message.className = `message message-${type}`;
+        message.innerHTML = `<span class="message-label">${type === 'user' ? 'Você' : category || 'Assistente'}</span><p></p>`;
+        message.querySelector('p').textContent = text;
+        messages.appendChild(message);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function askAssistant(question) {
+        const body = new URLSearchParams({ message: question });
+        const endpoint = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000/api/chat/' : '/api/chat/';
+        try {
+            const result = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body
+            });
+            if (!result.ok) throw new Error('Resposta indisponível');
+            return await result.json();
+        } catch (error) {
+            const normalized = question.toLowerCase();
+            const category = normalized.includes('cardio') || normalized.includes('coração') || normalized.includes('pressão') ? 'Cardiologia' : normalized.includes('neuro') || normalized.includes('cabeça') ? 'Neurologia' : normalized.includes('ortop') || normalized.includes('osso') ? 'Ortopedia' : 'Enciclopédia';
+            return { category, response: fallback };
+        }
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const question = input.value.trim();
+        if (!question) return;
+        addMessage(question, 'user');
+        input.value = '';
+        input.disabled = true;
+        const answer = await askAssistant(question);
+        addMessage(answer.response, 'assistant', answer.category);
+        input.disabled = false;
+        input.focus();
+    });
+
+    document.querySelectorAll('.category-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+            input.value = chip.dataset.question;
+            form.requestSubmit();
+        });
+    });
+</script>
+</body>
+</html>

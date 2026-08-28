@@ -105,9 +105,11 @@ a {
 .panel h2, .panel h3 { 
     color: var(--blue-light); 
     margin-top: 0; 
+    margin-bottom: 0;
 }
 .panel p, .panel li { 
     color: var(--muted); 
+    text-align: justify;
 }
 .panel ul { 
     padding-left: 1.2rem; 
@@ -152,9 +154,8 @@ textarea {
     font-size: .9rem; 
 }
 .article + .article { 
-    border-top: 1px solid var(--line); 
-    margin-top: 1.5rem; 
-    padding-top: 1.5rem; 
+    border-top: 1px solid var(--line);
+    padding-top: 1.5rem;
 }
 .tag { 
     color: var(--blue-light); 
