@@ -1,0 +1,212 @@
+:root { 
+    --blue: #2563eb; 
+    --blue-light: #60a5fa; 
+    --ink: #030712; 
+    --panel: #111827; 
+    --muted: #cbd5e1; 
+    --line: #334155; 
+}
+* { 
+    box-sizing: border-box; 
+}
+body { 
+    background: var(--ink); 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    margin: 0; 
+}
+a { 
+    color: inherit; 
+}
+.site-header { 
+    align-items: center; 
+    background: #030712; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 1rem clamp(1.25rem, 5vw, 5rem); 
+}
+.brand { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    text-decoration: none; 
+}
+.brand span { 
+    color: var(--blue-light); 
+}
+.site-nav { 
+    align-items: center; 
+    display: flex; 
+    gap: 1.25rem; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+.site-nav a { 
+    color: white; 
+    text-decoration: none; 
+}
+.site-nav a:hover { 
+    color: var(--blue-light); 
+}
+.button, button { 
+    background: var(--blue); 
+    border: 0; 
+    border-radius: 10px; 
+    color: white; 
+    cursor: pointer; 
+    font: inherit; 
+    font-weight: 700; 
+    padding: .8rem 1.2rem; 
+    text-decoration: none; 
+}
+.button:hover, button:hover { 
+    background: #1d4ed8; 
+}
+.page-main { 
+    background: linear-gradient(145deg, #030712 0%, #111827 52%, #0f172a 100%); 
+    min-height: calc(100vh - 190px); 
+    padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem); 
+}
+.page-heading { 
+    margin: 0 auto 2rem; max-width: 920px; 
+}
+.eyebrow { 
+    color: var(--blue-light); 
+    font-size: .8rem; 
+    font-weight: 800; 
+    letter-spacing: .16em; 
+    text-transform: uppercase; 
+}
+.page-heading h1 { 
+    font-size: clamp(2.3rem, 6vw, 4.8rem); 
+    line-height: 1.05; 
+    margin: .45rem 0 1rem; 
+}
+.page-heading p { 
+    color: var(--muted); 
+    font-size: 1.1rem; 
+    margin: 0; 
+    max-width: 680px; 
+}
+.content-grid { 
+    display: grid; 
+    gap: 1.25rem; 
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    margin: 2rem auto 0; 
+    max-width: 920px; 
+}
+.panel { 
+    background: rgba(15, 23, 42, .88); 
+    border: 1px solid var(--line); 
+    border-radius: 12px; 
+    padding: clamp(1.25rem, 3vw, 2rem); 
+}
+.panel h2, .panel h3 { 
+    color: var(--blue-light); 
+    margin-top: 0; 
+}
+.panel p, .panel li { 
+    color: var(--muted); 
+}
+.panel ul { 
+    padding-left: 1.2rem; 
+}
+.wide { 
+    grid-column: 1 / -1; 
+}
+.form-panel { 
+    margin: 0 auto; 
+    max-width: 560px; 
+}
+.form-row { 
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns: 1fr 1fr; 
+}
+label { 
+    color: var(--muted); 
+    display: block; 
+    font-weight: 700; 
+    margin: 1rem 0 .35rem; 
+}
+input, textarea, select { 
+    background: #020617; 
+    border: 1px solid var(--line); 
+    border-radius: 8px; 
+    color: white; 
+    font: inherit; 
+    padding: .8rem; 
+    width: 100%; 
+}
+textarea { 
+    min-height: 140px; 
+    resize: vertical; 
+}
+.form-panel button { 
+    margin-top: 1.25rem; 
+    width: 100%; 
+}
+.form-note { 
+    color: #94a3b8; 
+    font-size: .9rem; 
+}
+.article + .article { 
+    border-top: 1px solid var(--line); 
+    margin-top: 1.5rem; 
+    padding-top: 1.5rem; 
+}
+.tag { 
+    color: var(--blue-light); 
+    font-size: .85rem; 
+    font-weight: 700; 
+}
+.team-card strong { 
+    color: white; 
+    display: block; 
+    font-size: 1.1rem; 
+}
+.team-card span { 
+    color: var(--blue-light); 
+    font-size: .9rem; 
+}
+.site-footer { 
+    background: #020617; 
+    border-top: 1px solid #1e293b; 
+    color: #94a3b8; 
+    padding: 1.5rem clamp(1.25rem, 5vw, 5rem); 
+    text-align: center; 
+}
+.site-footer p { 
+    margin: 0 0 .75rem; 
+}
+.site-footer ul { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: .75rem 1.25rem; 
+    justify-content: center; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+.site-footer a { 
+    color: var(--muted); 
+    font-size: .9rem; text-decoration: none; 
+}
+.site-footer a:hover { 
+    color: white; 
+}
+@media (max-width: 640px) { 
+    .site-header { 
+        align-items: flex-start; 
+        flex-direction: column; 
+        gap: 1rem; 
+    } 
+    .site-nav { 
+        flex-wrap: wrap; 
+        gap: .8rem; 
+    } 
+    .form-row { 
+        grid-template-columns: 1fr; 
+    } 
+}
